@@ -1,4 +1,5 @@
 # gatsby-starter-mediacurrent
+![Mediacurrent Logo](https://www.drupal.org/files/styles/grid-3-2x/public/mc-blue-mediacurrent.png?itok=YDAOeM5m)
 
 ## Purpose
 
