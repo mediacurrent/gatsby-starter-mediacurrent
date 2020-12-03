@@ -33,4 +33,4 @@ The Recipe aids in the following areas of a project:
 
 To use this on a new project run:
 
-`npx gatsby new my-new-client-project https://github.com/mediacurrent/gatsby-starter-mediacurrent`
+`npx gatsby new my-new-project https://github.com/mediacurrent/gatsby-starter-mediacurrent`
