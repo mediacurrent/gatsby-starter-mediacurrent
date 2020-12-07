@@ -1,0 +1,109 @@
+// When you add a new variable in here, make sure to add it to the
+// exports declaration at the end of the file.
+// That will make sure it ends up in the style guide swatches.
+
+// Neutrals
+$color-dim-gray: #676767;
+$color-charcoal: #4d4d4d;
+$color-submarine: #909496;
+$color-silver: #bdbdbd;
+$color-white-smoke: #ededed;
+$color-tundra: #615d59;
+$color-zorba: #a19a94;
+$color-white-pointer: #d8d3cb;
+$color-narvik: #e9e5dd;
+$color-seashell: #f1f1f1; // previously #F1F0ED
+$color-white: #fff;
+$color-gondola: #353535;
+$color-raven: #7c7d7f; // For Prism header.
+$color-black: #000;
+
+//PBR Colors
+
+//Practice
+$color-port-gore: #37516d;
+
+//Business
+$color-astral: #327782;
+$color-allports: #186775;
+
+//Regulation
+$color-cutty-sark: #587d6d;
+$color-patina: #628b78;
+
+//Accent Colors
+
+$color-port-gore85: rgba($color-port-gore, 0.85);
+$color-port-gore65: rgba($color-port-gore, 0.65);
+
+$color-astral85: rgba($color-astral, 0.85);
+$color-astral65: rgba($color-astral, 0.65);
+
+$color-cutty-sark85: rgba($color-cutty-sark, 0.85);
+$color-cutty-sark65: rgba($color-cutty-sark, 0.65);
+
+$color-mexican-red: #a03d3d;
+$color-comet: #6d6a82;
+$color-turkish-rose: #9f6572;
+
+$color-blue-bayoux: #4c6380;
+
+$color-mystic: #dee5e9;
+$color-japanese-laurel: #008000;
+$color-web-orange: #ffa500;
+
+// Password Meter Colors
+$color-red65: rgba(255, 0, 0, 0.65);
+$color-orange-red65: rgba(255, 69, 0, 0.65);
+$color-orange65: rgba($color-web-orange, 0.65);
+$color-yellow-green65: rgba(154, 205, 50, 0.65);
+$color-green65: rgba($color-japanese-laurel, 0.65);
+
+// Exporting the variables here so we can display them in the style guide.
+:export {
+  // sass-lint:disable-block no-misspelled-properties no-color-keywords
+  neutral: {
+    dimgray: $color-dim-gray;
+    charcoal: $color-charcoal;
+    submarine: $color-submarine;
+    silver: $color-silver;
+    whitesmoke: $color-white-smoke;
+    tundra: $color-tundra;
+    zorba: $color-zorba;
+    whitepointer: $color-white-pointer;
+    narvik: $color-narvik;
+    seashell: $color-seashell;
+    white: $color-white;
+    gondala: $color-gondola;
+    raven: $color-raven;
+    black: $color-black;
+  }
+  pbr: {
+    //Practice
+    portgore: $color-port-gore;
+    //Business
+    astral: $color-astral;
+    //Regulation
+    patina: $color-patina;
+    cuttysark: $color-cutty-sark;
+  }
+  accent: {
+    allports: $color-allports;
+    portgore85: $color-port-gore85;
+    portgore65: $color-port-gore65;
+    astral85: $color-astral85;
+    astral65: $color-astral65;
+    cuttysark85: $color-cutty-sark85;
+    cuttysark65: $color-cutty-sark65;
+    mexicanred: $color-mexican-red;
+    comet: $color-comet;
+    turkishrose: $color-turkish-rose;
+    bluebayoux: $color-blue-bayoux;
+    mystic: $color-mystic;
+    red65: $color-red65;
+    orangered65: $color-orange65;
+    orange65: $color-orange65;
+    yellowgreen65: $color-yellow-green65;
+    green65: $color-green65;
+  }
+}

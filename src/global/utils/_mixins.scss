@@ -1,0 +1,39 @@
+/**
+ * Adds focus styles.
+ * Handles fallbacks for when the focus-visible polyfill is not available.
+ */
+@mixin focus {
+  // Provide a default focus style, the normal way.
+  &:focus {
+    @content;
+  }
+
+  // Remove a focus outline on focus if the user is using a mouse.
+  :global(.js-focus-visible) &:focus:not([data-focus-visible-added]) {
+    outline: none;
+  }
+
+  // Re-add the focus styles if the user is not using a mouse.
+  :global(.js-focus-visible) &[data-focus-visible-added] {
+    @content;
+  }
+}
+
+@mixin visually-hidden {
+  clip: rect(0, 0, 0, 0);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  border: 0;
+}
+
+@mixin container {
+  max-width: 95%;
+  margin: 0 auto;
+
+  @include breakpoint($bp-xlg) {
+    max-width: 1440px;
+  }
+}

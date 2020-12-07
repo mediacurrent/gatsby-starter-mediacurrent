@@ -1,0 +1,51 @@
+// Utilities
+//
+// Import variables and mixins
+// Should contain NO css output.
+// Only variables / mixins / settings.
+// ========================================
+@import 'utils/init';
+
+// Base
+//
+// Plain html element styling. Shouldn't require
+// any classes.
+// ========================================
+@import 'base/base';
+
+
+.heading1 {
+  @include font-size-heading1;
+}
+
+.heading2 {
+  @include font-size-heading2;
+}
+
+.heading3 {
+  @include font-size-heading3;
+}
+
+.heading4 {
+  @include font-size-heading4;
+}
+
+.heading5 {
+  @include font-size-heading5;
+}
+
+.heading6 {
+  @include font-size-heading6;
+}
+
+.visuallyHidden {
+  @include visually-hidden;
+}
+
+.container {
+  @include container;
+}
+
+.fixedBody {
+  position: fixed;
+}

@@ -5,21 +5,92 @@
   "version": "0.1.0",
   "license": "0BSD",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
+    "start": "gatsby develop -H 0.0.0.0",
+    "storybook": "NODE_ENV=test start-storybook -s ./static -p 6006",
+    "build": "npm run build:gatsby && npm run build:storybook",
+    "build:gatsby": "gatsby build",
+    "build:storybook": "NODE_ENV=test build-storybook --quiet -s ./static -c .storybook -o public/storybook",
+    "copy-static-queries": "cp -r ./public/page-data/sq/d ./public/static",
+    "prestorybook": "npm run copy-static-queries",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "npm run develop",
     "serve": "gatsby serve",
+    "serve:prod": "gatsby build && gatsby serve",
+    "serve:storybook": "npx http-server ./public/storybook",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "lint": "npm run lint:sass && npm run lint:js",
+    "lint:staged": "lint-staged",
+    "lint:js": "jest --config ./jest/jest.lint.js",
+    "lint:sass": "jest --config ./jest/jest.scss.js",
+    "test": "is-ci \"test:coverage\" \"test:watch\"",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:update": "npm run test:coverage -- -u",
+    "component": "plop component"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,md,mdx,json}": "prettier --write",
+    "*.scss": "npm run lint:sass"
+  },
+  "jest-runner-stylelint": {
+    "cliOptions": {
+      "fix": true
+    }
   },
   "dependencies": {
+    "@loadable/component": "^5.14.1",
     "gatsby": "^2.26.1",
+    "gatsby-plugin-advanced-sitemap": "^1.5.6",
+    "gatsby-plugin-env-variables": "^2.0.0",
+    "gatsby-plugin-loadable-components-ssr": "^2.1.0",
+    "gatsby-plugin-react-helmet": "^3.6.0",
+    "gatsby-plugin-react-svg": "^3.0.0",
+    "gatsby-plugin-robots-txt": "^1.5.3",
+    "gatsby-plugin-sharp": "^2.10.1",
+    "gatsby-source-drupal": "^3.9.0",
+    "gatsby-transformer-sharp": "^2.8.0",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "unfetch": "^4.2.0"
   },
   "devDependencies": {
-    "prettier": "2.1.2"
+    "@babel/core": "^7.12.9",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-proposal-optional-chaining": "^7.12.7",
+    "@babel/preset-env": "^7.12.7",
+    "@babel/preset-react": "^7.12.7",
+    "@loadable/babel-plugin": "^5.13.2",
+    "@mediacurrent/eslint-config-react": "0.0.1",
+    "@mediacurrent/jest-config-gatsby": "0.0.1",
+    "@mediacurrent/prettier-config": "0.0.1",
+    "@mediacurrent/storybook-config-gatsby": "0.0.1",
+    "@mediacurrent/stylelint-config": "0.0.1",
+    "@storybook/addon-a11y": "^6.1.10",
+    "@storybook/addon-essentials": "^6.1.10",
+    "@storybook/addon-knobs": "^6.1.10",
+    "@storybook/addon-links": "^6.1.10",
+    "@storybook/addon-storyshots": "^6.1.10",
+    "@storybook/react": "^6.1.10",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-macros": "^3.0.0",
+    "babel-plugin-remove-graphql-queries": "^2.12.0",
+    "babel-preset-gatsby": "^0.8.0",
+    "eslint": "^3.0.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.2.0",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^4.3.5",
+    "lint-staged": "^10.5.3",
+    "plop": "^2.7.4",
+    "prettier": "^2.2.1",
+    "stylelint": "^13.8.0",
+    "stylelint-config-standard": "^20.0.0"
   },
   "repository": {
     "type": "git",

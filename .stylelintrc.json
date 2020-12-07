@@ -1,0 +1,3 @@
+{
+  "extends": "@mediacurrent/stylelint-config"
+}
