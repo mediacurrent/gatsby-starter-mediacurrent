@@ -1,7 +1,3 @@
-const { rootDir } = require('./jest.common')
+const config = require('@mediacurrent/jest-config-gatsby/jest.lint.js')
 
-module.exports = {
-  rootDir,
-  displayName: 'lint:scss',
-  preset: 'jest-runner-stylelint'
-}
+module.exports = config

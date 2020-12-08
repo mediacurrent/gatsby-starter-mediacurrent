@@ -1,6 +1,2 @@
-const config = require('./jest/jest.common')
-
-module.exports = {
-  ...config
-  // Overrides go below here
-}
+const config = require('@mediacurrent/jest-config-gatsby')
+module.exports = config
