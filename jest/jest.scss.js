@@ -1,3 +1,4 @@
-const config = require('@mediacurrent/jest-config-gatsby/jest.lint.js')
-
-module.exports = config
+module.exports = {
+  displayName: 'lint:scss',
+  preset: 'jest-runner-stylelint'
+}

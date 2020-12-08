@@ -1,3 +1,5 @@
-const config = require('@mediacurrent/jest-config-gatsby/jest.lint.js')
-
-module.exports = config
+module.exports = {
+  displayName: 'lint:js',
+  runner: 'jest-runner-eslint',
+  testMatch: ['./src/**/*.js']
+}

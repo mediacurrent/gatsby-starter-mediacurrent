@@ -9,6 +9,8 @@ import PropTypes from 'prop-types'
 // Styles
 import styles from './foo.module.scss'
 
+console.log(styles)
+
 const Foo = (props) => {
   const { site } = useStaticQuery(graphql`
     query {
