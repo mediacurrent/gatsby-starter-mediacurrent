@@ -23,17 +23,17 @@ if (process.env.BRANCH === 'master') {
 let concurrentFileRequests = process.env.BRANCH === 'master' ? 20 : 2
 
 // These values are required for a fully functioning site. List all required env vars here.
-const requiredEnvValues = [
-  `DRUPAL`,
-  `DRUPAL_API_KEY`,
-  `DRUPAL_BASIC_AUTH_USERNAME`,
-  `DRUPAL_BASIC_AUTH_PASSWORD`
-]
+// const requiredEnvValues = [
+//   `DRUPAL`,
+//   `DRUPAL_API_KEY`,
+//   `DRUPAL_BASIC_AUTH_USERNAME`,
+//   `DRUPAL_BASIC_AUTH_PASSWORD`
+// ]
 
 // Fail fast if a required value is missing from .env
-requiredEnvValues.forEach((name) => {
-  assert(process.env[name], `${name} must be defined in .env.`)
-})
+// requiredEnvValues.forEach((name) => {
+//   assert(process.env[name], `${name} must be defined in .env.`)
+// })
 
 module.exports = {
   /* Your site config here */
