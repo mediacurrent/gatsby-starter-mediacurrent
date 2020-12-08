@@ -24,6 +24,7 @@ let concurrentFileRequests = process.env.BRANCH === 'master' ? 20 : 2
 
 // These values are required for a fully functioning site. List all required env vars here.
 // const requiredEnvValues = [
+//   `URL`,
 //   `DRUPAL`,
 //   `DRUPAL_API_KEY`,
 //   `DRUPAL_BASIC_AUTH_USERNAME`,
@@ -35,10 +36,21 @@ let concurrentFileRequests = process.env.BRANCH === 'master' ? 20 : 2
 //   assert(process.env[name], `${name} must be defined in .env.`)
 // })
 
+// Set site url.
+// Default to URL set in env.
+let siteUrl = process.env.URL
+if (env === 'DEVELOP') {
+  siteUrl = 'https://dev.mysite.com'
+}
+if (env === 'TEST') {
+  siteUrl = 'https://test.mysite.com'
+}
+
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: 'Mediacurrent Gatsby Starter'
+    title: 'Mediacurrent Gatsby Starter',
+    siteUrl: siteUrl
   },
   // Proxy local runtime queries to avoid CORS errors for when you may query Drupal client side.
   proxy: {
@@ -90,33 +102,33 @@ module.exports = {
         }
       }
     },
-    {
-      resolve: 'gatsby-source-drupal',
-      options: {
-        baseUrl: process.env[`DRUPAL`],
-        preview: true,
-        concurrentFileRequests: concurrentFileRequests,
-        // For all non-local environments, Gatsby accesses Drupal using a user
-        // named `gatsby` with the API Services role. The API Key for this user
-        // can be found in Drupal by finding the gatsby user and checking the
-        // key authentication tab.
-        //
-        // The reason for this is that there are some fields that are not used
-        // by any published content, and so excluding unpublished content during
-        // build breaks the graphql schema. An alternative solution would be to
-        // create custom GraphQL schema for empty fields as noted here:
-        // eslint-disable-next-line max-len
-        // https://www.jamesdflynn.com/development/gatsbyjs-drupal-create-custom-graphql-schema-empty-fields
-        disallowedLinkTypes: ['self', 'describedby'],
-        headers: {
-          'api-key': process.env[`DRUPAL_API_KEY`]
-        },
-        basicAuth: {
-          username: process.env[`DRUPAL_BASIC_AUTH_USERNAME`],
-          password: process.env[`DRUPAL_BASIC_AUTH_PASSWORD`]
-        }
-      }
-    },
+    // {
+    //   resolve: 'gatsby-source-drupal',
+    //   options: {
+    //     baseUrl: process.env[`DRUPAL`],
+    //     preview: true,
+    //     concurrentFileRequests: concurrentFileRequests,
+    //     // For all non-local environments, Gatsby accesses Drupal using a user
+    //     // named `gatsby` with the API Services role. The API Key for this user
+    //     // can be found in Drupal by finding the gatsby user and checking the
+    //     // key authentication tab.
+    //     //
+    //     // The reason for this is that there are some fields that are not used
+    //     // by any published content, and so excluding unpublished content during
+    //     // build breaks the graphql schema. An alternative solution would be to
+    //     // create custom GraphQL schema for empty fields as noted here:
+    //     // eslint-disable-next-line max-len
+    //     // https://www.jamesdflynn.com/development/gatsbyjs-drupal-create-custom-graphql-schema-empty-fields
+    //     disallowedLinkTypes: ['self', 'describedby'],
+    //     headers: {
+    //       'api-key': process.env[`DRUPAL_API_KEY`]
+    //     },
+    //     basicAuth: {
+    //       username: process.env[`DRUPAL_BASIC_AUTH_USERNAME`],
+    //       password: process.env[`DRUPAL_BASIC_AUTH_PASSWORD`]
+    //     }
+    //   }
+    // },
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {

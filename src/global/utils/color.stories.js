@@ -1,22 +1,18 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import colors from './_colors.scss';
+import React from 'react'
+import PropTypes from 'prop-types'
+import colors from './_colors.scss'
 
 const filterGroup = (filter) =>
-  Object.keys(colors).filter((color) => color.indexOf(filter) === 0);
+  Object.keys(colors).filter((color) => color.indexOf(filter) === 0)
 
-export default {
-  title: 'Global/Colors'
-};
-
-export const All = () => (
+const All = () => (
   <div style={{ padding: '20px' }}>
     <>
       <h3>Neutral Colors</h3>
       <ColorGroup group={filterGroup('neutral')} />
     </>
     <>
-      <h3>PBR Colors</h3>
+      <h3>Brand Colors</h3>
       <ColorGroup group={filterGroup('pbr')} />
     </>
     <>
@@ -24,23 +20,27 @@ export const All = () => (
       <ColorGroup group={filterGroup('accent')} />
     </>
   </div>
-);
+)
+const Template = (args) => <All {...args} />
 
-All.story = {
-  name: 'all'
-};
+export const Default = Template.bind({})
+
+export default {
+  title: 'Global/Colors',
+  component: All
+}
 
 // Convert the color key to the color variable name.
 const colorVariable = (color) => {
-  const array = color.split('-')[1].split(/(?=[A-Z])/);
-  return `$color-${array.join('-').toLowerCase()}`;
-};
+  const array = color.split('-')[1].split(/(?=[A-Z])/)
+  return `$color-${array.join('-').toLowerCase()}`
+}
 
 // Convert the color key to the color proper name.
 const colorName = (color) => {
-  const array = color.split('-')[1].split(/(?=[A-Z])/);
-  return `${array.join(' ').toLowerCase()}`;
-};
+  const array = color.split('-')[1].split(/(?=[A-Z])/)
+  return `${array.join(' ').toLowerCase()}`
+}
 
 // A component for displaying individual color swatches.
 const Color = ({ color }) => (
@@ -66,11 +66,11 @@ const Color = ({ color }) => (
     <span>{colorVariable(color)}</span> <br />
     <span>{colors[color]}</span> <br />
   </li>
-);
+)
 
 Color.propTypes = {
   color: PropTypes.string.isRequired
-};
+}
 
 // A component for displaying a group of colors.
 const ColorGroup = ({ group }) => (
@@ -83,11 +83,11 @@ const ColorGroup = ({ group }) => (
     }}
   >
     {group.map((color) => {
-      return <Color color={color} key={color} />;
+      return <Color color={color} key={color} />
     })}
   </ul>
-);
+)
 
 ColorGroup.propTypes = {
   group: PropTypes.array.isRequired
-};
+}

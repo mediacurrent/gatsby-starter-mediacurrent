@@ -1,5 +1,7 @@
 // Third party
 import React from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
+
 import PropTypes from 'prop-types'
 // Components
 // Utils
@@ -8,7 +10,20 @@ import PropTypes from 'prop-types'
 import styles from './foo.module.scss'
 
 const Foo = (props) => {
-  return <div className={styles.foo}>Foo</div>
+  const { site } = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          siteUrl
+        }
+      }
+    }
+  `)
+  return (
+    <div className={styles.foo}>
+      The site url is {site.siteMetadata.siteUrl}
+    </div>
+  )
 }
 
 Foo.propTypes = {}

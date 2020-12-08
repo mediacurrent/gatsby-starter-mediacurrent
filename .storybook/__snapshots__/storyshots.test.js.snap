@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components/Foo Default 1`] = `
+<div
+  className="foo"
+>
+  The site url is 
+  https://dev.mysite.com
+</div>
+`;
+
+exports[`Storyshots Global/Colors All 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
+  <h3>
+    Neutral Colors
+  </h3>
+  <ul
+    style={
+      Object {
+        "display": "grid",
+        "gridGap": "20px",
+        "gridTemplateColumns": "repeat(auto-fill, minmax(120px, 175px))",
+        "marginBottom": "40px",
+      }
+    }
+  />
+  <h3>
+    PBR Colors
+  </h3>
+  <ul
+    style={
+      Object {
+        "display": "grid",
+        "gridGap": "20px",
+        "gridTemplateColumns": "repeat(auto-fill, minmax(120px, 175px))",
+        "marginBottom": "40px",
+      }
+    }
+  />
+  <h3>
+    Accent Colors
+  </h3>
+  <ul
+    style={
+      Object {
+        "display": "grid",
+        "gridGap": "20px",
+        "gridTemplateColumns": "repeat(auto-fill, minmax(120px, 175px))",
+        "marginBottom": "40px",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Storyshots Global/Colors Default 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+>
+  <h3>
+    Neutral Colors
+  </h3>
+  <ul
+    style={
+      Object {
+        "display": "grid",
+        "gridGap": "20px",
+        "gridTemplateColumns": "repeat(auto-fill, minmax(120px, 175px))",
+        "marginBottom": "40px",
+      }
+    }
+  />
+  <h3>
+    PBR Colors
+  </h3>
+  <ul
+    style={
+      Object {
+        "display": "grid",
+        "gridGap": "20px",
+        "gridTemplateColumns": "repeat(auto-fill, minmax(120px, 175px))",
+        "marginBottom": "40px",
+      }
+    }
+  />
+  <h3>
+    Accent Colors
+  </h3>
+  <ul
+    style={
+      Object {
+        "display": "grid",
+        "gridGap": "20px",
+        "gridTemplateColumns": "repeat(auto-fill, minmax(120px, 175px))",
+        "marginBottom": "40px",
+      }
+    }
+  />
+</div>
+`;

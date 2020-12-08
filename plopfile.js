@@ -15,22 +15,22 @@ module.exports = function (plop) {
       {
         type: 'add',
         path: 'src/components/{{dashCase name}}/{{dashCase name}}.js',
-        templateFile: 'plop-templates/component.js.hbs'
+        templateFile: 'plop-templates/component/component.js.hbs'
       },
       {
         type: 'add',
         path: 'src/components/{{dashCase name}}/{{dashCase name}}.stories.js',
-        templateFile: 'plop-templates/story.js.hbs'
+        templateFile: 'plop-templates/component/story.js.hbs'
       },
       {
         type: 'add',
         path: 'src/components/{{dashCase name}}/data.js',
-        templateFile: 'plop-templates/data.js.hbs'
+        templateFile: 'plop-templates/component/data.js.hbs'
       },
       {
         type: 'add',
         path: 'src/components/{{dashCase name}}/{{dashCase name}}.module.scss',
-        templateFile: 'plop-templates/styles.module.scss.hbs'
+        templateFile: 'plop-templates/component/styles.module.scss.hbs'
       }
     ]
   })
