@@ -1,8 +1,4 @@
-// Type
-//
-// Using Typekit.
-
-// @import 'breakpoints';
+// Typography
 
 @mixin font-primary {
   font-family: 'acumin-pro-semi-condensed', -apple-system, system-ui, SegoeUI,
@@ -24,55 +20,6 @@ $font-weight-light: 300;
 @mixin font-size-heading1 {
   font-size: 3.6rem;
   font-weight: $font-weight-light;
-
-  @include breakpoint($bp-md) {
-    font-size: 6rem;
-  }
-}
-
-@mixin font-size-heading2 {
-  font-size: 3.2rem;
-  font-weight: $font-weight-light;
-
-  @include breakpoint($bp-md) {
-    font-size: 4.8rem;
-  }
-}
-
-@mixin font-size-heading3 {
-  font-size: 2.8rem;
-  font-weight: $font-weight-light;
-
-  @include breakpoint($bp-md) {
-    font-size: 4rem;
-  }
-}
-
-@mixin font-size-heading4 {
-  font-size: 2.4rem;
-  font-weight: $font-weight-light;
-
-  @include breakpoint($bp-md) {
-    font-size: 3.2rem;
-  }
-}
-
-@mixin font-size-heading5 {
-  font-size: 2rem;
-  font-weight: $font-weight-normal;
-
-  @include breakpoint($bp-md) {
-    font-size: 2.4rem;
-  }
-}
-
-@mixin font-size-heading6 {
-  font-size: 1.8rem;
-  font-weight: $font-weight-normal;
-
-  @include breakpoint($bp-md) {
-    font-size: 2rem;
-  }
 }
 
 // Global styles for Body copy.
@@ -81,45 +28,4 @@ $font-weight-light: 300;
   font-size: 1.6rem;
   line-height: 1.75;
   font-weight: $font-weight-normal;
-}
-
-@mixin font-size-body-lg {
-  font-size: 1.8rem;
-  line-height: 1.75;
-  font-weight: $font-weight-normal;
-}
-
-@mixin font-size-body-xlg {
-  font-size: 2.1rem;
-  line-height: 1.75;
-  font-weight: $font-weight-normal;
-
-  @include breakpoint($bp-md) {
-    font-size: 2.2rem;
-  }
-}
-
-@mixin all-caps-heading {
-  @include font-secondary;
-  @include font-size-body-lg;
-  font-weight: $font-weight-bold;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-@mixin footnotes {
-  @include font-primary;
-  font-size: 1rem;
-}
-
-@mixin white-arrow {
-  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMy4zIDEyLjEnPjxwYXRoIGQ9J004IDBsLS44LjcgNC4zIDQuOEgwdjFoMTEuNWwtNC4zIDQuOS44LjdMMTMuMyA2IDggMHonIGZpbGw9J3JnYigyMTIsIDIxMiwgMjEyKScvPjwvc3ZnPg==');
-  background-repeat: no-repeat;
-  content: '';
-}
-
-@mixin gray-arrow {
-  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMy4zIDEyLjEnPjxwYXRoIGQ9J004IDBsLS44LjcgNC4zIDQuOEgwdjFoMTEuNWwtNC4zIDQuOS44LjdMMTMuMyA2IDggMHonIGZpbGw9J3JnYig3NiwgOTksIDEyOCknLz48L3N2Zz4=');
-  background-repeat: no-repeat;
-  content: '';
 }

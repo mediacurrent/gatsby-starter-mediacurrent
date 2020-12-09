@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import colors from './_colors.scss'
+import colors from '../utils/_colors.scss'
 
 const filterGroup = (filter) =>
   Object.keys(colors).filter((color) => color.indexOf(filter) === 0)
@@ -8,16 +8,16 @@ const filterGroup = (filter) =>
 const All = () => (
   <div style={{ padding: '20px' }}>
     <>
-      <h3>Neutral Colors</h3>
-      <ColorGroup group={filterGroup('neutral')} />
-    </>
-    <>
       <h3>Brand Colors</h3>
-      <ColorGroup group={filterGroup('pbr')} />
+      <ColorGroup group={filterGroup('brand')} />
     </>
     <>
       <h3>Accent Colors</h3>
       <ColorGroup group={filterGroup('accent')} />
+    </>
+    <>
+      <h3>Neutral Colors</h3>
+      <ColorGroup group={filterGroup('neutral')} />
     </>
   </div>
 )

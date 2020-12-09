@@ -13,39 +13,10 @@
 // ========================================
 @import 'base/base';
 
-
 .heading1 {
   @include font-size-heading1;
 }
 
-.heading2 {
-  @include font-size-heading2;
-}
-
-.heading3 {
-  @include font-size-heading3;
-}
-
-.heading4 {
-  @include font-size-heading4;
-}
-
-.heading5 {
-  @include font-size-heading5;
-}
-
-.heading6 {
-  @include font-size-heading6;
-}
-
 .visuallyHidden {
   @include visually-hidden;
-}
-
-.container {
-  @include container;
-}
-
-.fixedBody {
-  position: fixed;
 }

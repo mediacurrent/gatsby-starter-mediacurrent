@@ -28,12 +28,3 @@
   overflow: hidden;
   border: 0;
 }
-
-@mixin container {
-  max-width: 95%;
-  margin: 0 auto;
-
-  @include breakpoint($bp-xlg) {
-    max-width: 1440px;
-  }
-}

@@ -1,5 +1,8 @@
+const { rootDir } = require('./jest.common')
+
 module.exports = {
+  rootDir,
   displayName: 'lint:js',
   runner: 'jest-runner-eslint',
-  testMatch: ['./src/**/*.js']
+  testMatch: ['<rootDir>/src/**/*.js']
 }

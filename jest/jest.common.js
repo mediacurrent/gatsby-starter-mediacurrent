@@ -1,6 +1,9 @@
+const path = require('path')
+
 module.exports = {
+  rootDir: path.join(__dirname, '..'),
   transform: {
-    '^.+\\.jsx?$': './jest.preprocess.js'
+    '^.+\\.jsx?$': '<rootDir>/jest/jest.preprocess.js'
   },
   moduleNameMapper: {
     '.+\\.(css|styl|less|sass|scss)$': 'identity-obj-proxy',
@@ -14,8 +17,8 @@ module.exports = {
     __PATH_PREFIX__: ''
   },
   testURL: 'http://localhost',
-  setupFiles: [require.resolve('./jest.loadershim.js')],
-  setupFilesAfterEnv: [require.resolve('./jest.setup.js')],
+  setupFiles: ['<rootDir>/jest/jest-loadershim.js'],
+  setupFilesAfterEnv: ['<rootDir>/jest/jest.setup.js'],
   collectCoverageFrom: ['**/src/**/*.js'],
   watchPlugins: [
     'jest-watch-typeahead/filename',
