@@ -3,6 +3,7 @@
  *
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
+const path = require(`path`)
 const assert = require('assert')
 
 require('dotenv').config({
@@ -72,6 +73,13 @@ module.exports = {
         // Whether replaceHydrateFunction should call ReactDOM.hydrate or ReactDOM.render
         // Defaults to ReactDOM.render on develop and ReactDOM.hydrate on build
         useHydrate: true
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: path.join(__dirname, `src`, `images`)
       }
     },
     {

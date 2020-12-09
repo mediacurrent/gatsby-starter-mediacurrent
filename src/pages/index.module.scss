@@ -1,0 +1,144 @@
+@import '../global/utils/init';
+
+.indexPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@mixin text-gradient($color1, $color2) {
+  background-size: 100%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  background-image: radial-gradient(circle at top right, $color1, transparent),
+    radial-gradient(circle at bottom left, $color2, transparent);
+}
+
+.heading {
+  @include font-secondary;
+  position: relative;
+  font-size: 6rem;
+  text-transform: uppercase;
+  margin-bottom: $space-xl;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: $space-xs;
+    width: 100%;
+  }
+
+  &.background-orange {
+    @include text-gradient($color-happy-orange, $color-sunrise-yellow);
+    &:after {
+      background-image: radial-gradient(
+          circle at top right,
+          $color-happy-orange,
+          transparent
+        ),
+        radial-gradient(
+          circle at bottom left,
+          $color-sunrise-yellow,
+          transparent
+        );
+    }
+  }
+
+  &.background-blue {
+    @include text-gradient($color-deep-blue, $color-purple-heart);
+    &:after {
+      background-image: radial-gradient(
+          circle at top right,
+          $color-deep-blue,
+          transparent
+        ),
+        radial-gradient(circle at bottom left, $color-purple-heart, transparent);
+    }
+  }
+
+  &.background-lavender {
+    @include text-gradient($color-lavender, $color-ocean-blue-light);
+
+    &:after {
+      background-image: radial-gradient(
+          circle at top right,
+          $color-lavender,
+          transparent
+        ),
+        radial-gradient(
+          circle at bottom left,
+          $color-ocean-blue-light,
+          transparent
+        );
+    }
+  }
+}
+
+p {
+  margin-bottom: $space-xl;
+}
+
+@keyframes jelly {
+  0%,
+  100% {
+    transform: scale(1, 1);
+  }
+  8% {
+    transform: scale(0.9, 1.1);
+  }
+  16% {
+    transform: scale(1.1, 0.9);
+  }
+  24% {
+    transform: scale(0.95, 1.05);
+  }
+}
+
+.imageContainer {
+  display: flex;
+  margin: $space-md auto;
+  background-color: $color-white;
+  padding: $space-md;
+  border-radius: $space-lg;
+
+  :global(.gatsby-image-wrapper) {
+    width: 15%;
+    max-width: 150px;
+    max-height: 150px;
+    margin-right: $space-md;
+    animation: jelly 3.2s infinite;
+
+    &:first-of-type {
+      animation: jelly 3s infinite;
+    }
+  }
+
+  span {
+    font-size: 10rem;
+    margin-right: $space-md;
+  }
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: $space-sm;
+
+  ul {
+    columns: 6;
+  }
+
+  li {
+    margin: $space-xs;
+    text-transform: uppercase;
+
+    a {
+      color: $color-deep-blue;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  }
+}

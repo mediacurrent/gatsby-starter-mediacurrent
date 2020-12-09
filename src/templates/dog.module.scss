@@ -1,0 +1,22 @@
+@import '../global/utils/init';
+
+.dogPage {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.breed {
+  font-size: 6rem;
+  background-image: radial-gradient(
+      circle at top right,
+      $color-deep-blue,
+      transparent
+    ),
+    radial-gradient(circle at bottom left, $color-purple-heart, transparent);
+  background-size: 100%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}

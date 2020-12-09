@@ -2,6 +2,7 @@
 // Variables
 //=======================================================
 
+// z-index
 $zi-highest: 50;
 $zi-high: 40;
 $zi-medium: 30;
@@ -10,3 +11,13 @@ $zi-lowest: 10;
 $zi-above-ground: 1;
 $zi-ground: 0;
 $zi-below-ground: -1;
+
+// spacing
+$space-unit: 16px;
+$space-xxs: calc(0.25 * #{$space-unit}); // 4px
+$space-xs: calc(0.5 * #{$space-unit}); // 8px
+$space-sm: calc(0.75 * #{$space-unit}); // 12px
+$space-md: calc(1.25 * #{$space-unit}); // 20px
+$space-lg: calc(2 * #{$space-unit}); // 32px
+$space-xl: calc(3.25 * #{$space-unit}); // 52px
+$space-xxl: calc(5.25 * #{$space-unit}); // 84px

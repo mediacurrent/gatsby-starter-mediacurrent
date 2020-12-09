@@ -1,7 +1,9 @@
 import { graphql } from 'gatsby'
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 
+import styles from './dog.module.scss'
 // The result of the query on this page gets passed in to the default export as
 // a prop called `data`.
 const DogPage = ({ data }) => {
@@ -11,7 +13,9 @@ const DogPage = ({ data }) => {
       <Helmet>
         <title> {data.dog.breed} page</title>
       </Helmet>
-      <h1>{data.dog.breed}</h1>
+      <div className={styles.dogPage}>
+        <h1 className={styles.breed}>{data.dog.breed}</h1>
+      </div>
     </>
   )
 }
