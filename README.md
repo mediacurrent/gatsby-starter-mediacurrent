@@ -39,6 +39,15 @@ To use this on a new project run:
 
 Before running commands, you should do `nvm use` and install the version of Node.js mentioned if it's not already.
 
+## ENV Variables
+
+Create a `.env` file with the following values.  This is temporary and will change and have an accurate error message to avoid confusion.
+
+```
+DRUPAL='/foo'
+DRUPAL_API_KEY=123
+```
+
 ## Usage
 
 To start the project run:
