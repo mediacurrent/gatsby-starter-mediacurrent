@@ -1,0 +1,31 @@
+// Third party imports.
+import React from 'react'
+import { graphql } from 'gatsby'
+import { Helmet } from 'react-helmet'
+import PropTypes from 'prop-types';
+// Component imports
+// Util imports
+// Image imports
+// Style imports
+import styles from './{{dashCase name}}.module.scss';
+
+const {{pascalCase name}}Page = ({ data }) => {
+  return (
+     <div className={ styles.{{camelCase name}} }>
+      <Helmet title={'New template page title!'} />
+      <h1>Don't forget your template query!</h1>
+    </div>
+  )
+}
+
+export default {{pascalCase name}}Page
+
+{{pascalCase name}}Page.propTypes = {
+  data: PropTypes.shape({})
+};
+
+export const {{pascalCase name}}PageQuery = graphql`
+  query {{pascalCase name}}PageQuery($slug: String) {
+    // Query node here.
+  }
+`

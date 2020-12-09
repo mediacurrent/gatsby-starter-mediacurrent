@@ -1,0 +1,30 @@
+// Third party imports.
+import React from 'react'
+import { graphql } from 'gatsby'
+import PropTypes from 'prop-types';
+
+// Component imports
+// Util imports
+// Image imports
+// Style imports
+import styles from './{{dashCase name}}.module.scss';
+
+const {{pascalCase name}}Page = (({ data })) => {
+  // Query data in as props.
+  console.log(data);
+  return <div className={ styles.{{camelCase name}} }>The {{name}} page!</div>
+}
+
+export default {{pascalCase name}}Page
+
+{{pascalCase name}}Page.propTypes = {
+  data: PropTypes.shape({
+    
+  })
+};
+
+export const IndexPageQuery = graphql`
+  query {
+    // Page query here.
+  }
+`

@@ -34,4 +34,70 @@ module.exports = function (plop) {
       }
     ]
   })
+
+  plop.setGenerator('page', {
+    description: 'create a new page',
+    prompts: [
+      {
+        type: 'input',
+        name: 'name',
+        message: 'page name please'
+      }
+    ],
+    actions: [
+      {
+        type: 'add',
+        path: 'src/pages/{{dashCase name}}/{{dashCase name}}.js',
+        templateFile: 'plop-templates/page/page.js.hbs'
+      },
+      {
+        type: 'add',
+        path: 'src/pages/{{dashCase name}}/{{dashCase name}}.stories.js',
+        templateFile: 'plop-templates/page/story.js.hbs'
+      },
+      {
+        type: 'add',
+        path: 'src/pages/{{dashCase name}}/data.js',
+        templateFile: 'plop-templates/page/data.js.hbs'
+      },
+      {
+        type: 'add',
+        path: 'src/pages/{{dashCase name}}/{{dashCase name}}.module.scss',
+        templateFile: 'plop-templates/page/styles.module.scss.hbs'
+      }
+    ]
+  })
+
+  plop.setGenerator('template', {
+    description: 'create a new template',
+    prompts: [
+      {
+        type: 'input',
+        name: 'name',
+        message: 'template name please'
+      }
+    ],
+    actions: [
+      {
+        type: 'add',
+        path: 'src/templates/{{dashCase name}}/{{dashCase name}}.js',
+        templateFile: 'plop-templates/template/template.js.hbs'
+      },
+      {
+        type: 'add',
+        path: 'src/templates/{{dashCase name}}/{{dashCase name}}.stories.js',
+        templateFile: 'plop-templates/template/story.js.hbs'
+      },
+      {
+        type: 'add',
+        path: 'src/templates/{{dashCase name}}/data.js',
+        templateFile: 'plop-templates/template/data.js.hbs'
+      },
+      {
+        type: 'add',
+        path: 'src/templates/{{dashCase name}}/{{dashCase name}}.module.scss',
+        templateFile: 'plop-templates/template/styles.module.scss.hbs'
+      }
+    ]
+  })
 }
