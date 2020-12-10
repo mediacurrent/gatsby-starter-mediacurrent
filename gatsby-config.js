@@ -122,6 +122,7 @@ module.exports = {
     //     // eslint-disable-next-line max-len
     //     // https://www.jamesdflynn.com/development/gatsbyjs-drupal-create-custom-graphql-schema-empty-fields
     //     disallowedLinkTypes: ['self', 'describedby'],
+    //     // If auth is needed, use this pattern, otherwise delete.
     //     headers: {
     //       'api-key': process.env[`DRUPAL_API_KEY`]
     //     },
@@ -178,7 +179,17 @@ module.exports = {
       }
     },
     // Transforms markdown files. Used for docs. Can be removed.
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        tableOfContents: {
+          pathToSlugField: 'frontmatter.slug',
+          heading: null,
+          maxDepth: 6
+        },
+        plugins: [`gatsby-remark-prismjs`]
+      }
+    },
     `gatsby-plugin-source-template-demo`,
     `gatsby-plugin-docs-demo`
   ]

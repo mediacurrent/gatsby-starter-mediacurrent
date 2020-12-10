@@ -3,84 +3,48 @@ slug: '/docs/'
 title: 'Docs'
 ---
 
-# gatsby-starter-mediacurrent
+# Table of Contents
 
-![Mediacurrent Logo](https://www.drupal.org/files/styles/grid-3-2x/public/mc-blue-mediacurrent.png?itok=YDAOeM5m)
+## [Intro 1️⃣](/docs/intro)
 
-## Purpose
+Getting installed, ENV vars, running locally, and other initial tasks.
 
-A tool for starting and maintaing a Gatsby project at Mediacurrent.
-This should aid in the following:
+## [Pages 📖](/docs/pages)
 
-- creating a project with Mediacurrent standards already in place
+Creating static pages and querying their data.
 
-## How is a Starter different from a Recipe?
+## [Templates 📐](/docs/templates)
 
-While very similar, a Recipe allows for continuous reading from upstream for updates to the Recipe. For example, a Starter with a Storybook configuration will work, but if the is ever an effort to do a major upgrade to Storybook and it causes breaking changes and fixes, with a Recipe that can happen once in the main Recipe and pulled down to other projects.
+Creating templated pages for many instances of a shared structure and styles.
 
-We still need to determine which areas are better suited to live in the Starter versus the Recipe.
+## [Styles 🎨](/docs/styles)
 
-## Areas of Impact
+Applying styles with CSS modules and patterns you may see.
 
-The Recipe aids in the following areas of a project:
+## [Components 🧱](/docs/components)
 
-- Basic project structure
-- Common JS utilities
-- ESLint
-- Babel
-- Prettier
-- Sass-lint
-- SVGs
-- Storybook
-- ENV Variables
-- Jest test running
-- Plop component generator
+Structuring components for consistent styles, data fetching, etc.
 
-## Installation
+## [Storybook 📚](/docs/storybook)
 
-To use this on a new project run:
+How to get Storybook up and running, with some common gotchas.
 
-`npx gatsby new my-new-project https://github.com/mediacurrent/gatsby-starter-mediacurrent`
+## [Images 🖼️](/docs/images)
 
-## nvm
+Working with images in Gatsby, including using `gatsby-image` or hosting your images somewhere else.
 
-Before running commands, you should do `nvm use` and install the version of Node.js mentioned if it's not already.
+## [Global 🌎](/docs/global)
 
-## ENV Variables
+Useful global CSS, JS functions, and other utilities.
 
-Create a `.env` file with the following values. This is temporary and will change and have an accurate error message to avoid confusion.
+## [Jest 🤡](/docs/jest)
 
-```
-DRUPAL='/foo'
-DRUPAL_API_KEY=123
-```
+How to setup and run Jest test suites on your site.
 
-## Usage
+## [Fragments 🧩](/docs/fragments)
 
-To start the project run:
+Reusing common GraphQL queries.
 
-`npm run start`
+## [Plop 💧](/docs/plop)
 
-This should generate the site locally at `http://localhost:8000`, with the GraphiQL Explorer page at `http://localhost:8000/__graphql`.
-
-## Storybook
-
-To run Storybook, run:
-
-`npm run storybook`
-
-## Build
-
-To build the site to static files, including Storybook, run:
-
-`npm run build`
-
-## Serve
-
-To serve the static site locally, run:
-
-`npm run serve`
-
-## Live Demo
-
-https://gatsbystartermediacurrent.gtsb.io/
+Quickly and consistently generate new components, pages and templates from the command line.

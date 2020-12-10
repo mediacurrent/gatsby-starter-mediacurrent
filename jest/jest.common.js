@@ -17,7 +17,7 @@ module.exports = {
     __PATH_PREFIX__: ''
   },
   testURL: 'http://localhost',
-  setupFiles: ['<rootDir>/jest/jest-loadershim.js'],
+  setupFiles: ['<rootDir>/jest/jest.loadershim.js'],
   setupFilesAfterEnv: ['<rootDir>/jest/jest.setup.js'],
   collectCoverageFrom: ['**/src/**/*.js'],
   watchPlugins: [
