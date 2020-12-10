@@ -17,7 +17,7 @@ Before running commands, you should do `nvm use` and install the version of Node
 
 Create a `.env` file with the following values. This is temporary and will change and have an accurate error message to avoid confusion.
 
-```
+```env
 DRUPAL = '/foo'
 DRUPAL_API_KEY = 123
 ```
