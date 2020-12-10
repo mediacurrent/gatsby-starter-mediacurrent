@@ -1,6 +1,7 @@
 import { graphql } from 'gatsby'
 import React from 'react'
 import { Link } from 'gatsby'
+import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import Img from 'gatsby-image'
 
@@ -54,6 +55,28 @@ const IndexPage = ({ data }) => {
 }
 
 export default IndexPage
+
+IndexPage.propTypes = {
+  data: PropTypes.shape({
+    logo: PropTypes.shape({
+      childImageSharp: PropTypes.shape({
+        fixed: PropTypes.object
+      })
+    }),
+    gatsby: PropTypes.shape({
+      childImageSharp: PropTypes.shape({
+        fixed: PropTypes.object
+      })
+    }),
+    allDog: PropTypes.shape({
+      nodes: PropTypes.arrayOf(
+        PropTypes.shape({
+          breed: PropTypes.string
+        })
+      )
+    })
+  })
+}
 
 export const IndexPageQuery = graphql`
   query {
