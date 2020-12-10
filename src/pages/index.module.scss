@@ -30,50 +30,46 @@
     height: $space-xs;
     width: 100%;
   }
+}
 
-  &.background-orange {
-    @include text-gradient($color-happy-orange, $color-sunrise-yellow);
-    &:after {
-      background-image: radial-gradient(
-          circle at top right,
-          $color-happy-orange,
-          transparent
-        ),
-        radial-gradient(
-          circle at bottom left,
-          $color-sunrise-yellow,
-          transparent
-        );
-    }
+.background-orange {
+  @include text-gradient($color-happy-orange, $color-sunrise-yellow);
+  &:after {
+    background-image: radial-gradient(
+        circle at top right,
+        $color-happy-orange,
+        transparent
+      ),
+      radial-gradient(circle at bottom left, $color-sunrise-yellow, transparent);
   }
+}
 
-  &.background-blue {
-    @include text-gradient($color-deep-blue, $color-purple-heart);
-    &:after {
-      background-image: radial-gradient(
-          circle at top right,
-          $color-deep-blue,
-          transparent
-        ),
-        radial-gradient(circle at bottom left, $color-purple-heart, transparent);
-    }
+.background-blue {
+  @include text-gradient($color-deep-blue, $color-purple-heart);
+  &:after {
+    background-image: radial-gradient(
+        circle at top right,
+        $color-deep-blue,
+        transparent
+      ),
+      radial-gradient(circle at bottom left, $color-purple-heart, transparent);
   }
+}
 
-  &.background-lavender {
-    @include text-gradient($color-lavender, $color-ocean-blue-light);
+.background-lavender {
+  @include text-gradient($color-lavender, $color-ocean-blue-light);
 
-    &:after {
-      background-image: radial-gradient(
-          circle at top right,
-          $color-lavender,
-          transparent
-        ),
-        radial-gradient(
-          circle at bottom left,
-          $color-ocean-blue-light,
-          transparent
-        );
-    }
+  &:after {
+    background-image: radial-gradient(
+        circle at top right,
+        $color-lavender,
+        transparent
+      ),
+      radial-gradient(
+        circle at bottom left,
+        $color-ocean-blue-light,
+        transparent
+      );
   }
 }
 
@@ -81,45 +77,33 @@ p {
   margin-bottom: $space-xl;
 }
 
-@keyframes jelly {
-  0%,
-  100% {
-    transform: scale(1, 1);
-  }
-  8% {
-    transform: scale(0.9, 1.1);
-  }
-  16% {
-    transform: scale(1.1, 0.9);
-  }
-  24% {
-    transform: scale(0.95, 1.05);
-  }
+h2 {
+  margin-top: $space-md;
+  margin-bottom: $space-md;
 }
 
 .imageContainer {
   display: flex;
   margin: $space-md auto;
   background-color: $color-white;
-  padding: $space-md;
+  padding: $space-md 0;
   border-radius: $space-lg;
 
   :global(.gatsby-image-wrapper) {
     width: 15%;
-    max-width: 150px;
-    max-height: 150px;
+    max-width: 50px;
+    max-height: 50px;
     margin-right: $space-md;
-    animation: jelly 3.2s infinite;
-
-    &:first-of-type {
-      animation: jelly 3s infinite;
-    }
   }
 
   span {
-    font-size: 10rem;
+    font-size: 3rem;
     margin-right: $space-md;
   }
+}
+
+.docsLink {
+  font-size: 1.75rem;
 }
 
 .container {

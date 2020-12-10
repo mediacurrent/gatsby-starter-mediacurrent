@@ -14,9 +14,9 @@ const IndexPage = ({ data }) => {
     <div className={styles.indexPage}>
       <div className={styles.container}>
         <div className={styles.imageContainer}>
-          <Img fluid={data.logo.childImageSharp.fluid} />
+          <Img fixed={data.logo.childImageSharp.fixed} />
           <span>+</span>
-          <Img fluid={data.gatsby.childImageSharp.fluid} />
+          <Img fixed={data.gatsby.childImageSharp.fixed} />
         </div>
         <h1
           className={classnames(styles.heading, {
@@ -25,6 +25,18 @@ const IndexPage = ({ data }) => {
         >
           Mediacurrent Gatsby Starter
         </h1>
+        <h2>Docs:</h2>
+        <strong>
+          <a
+            className={classnames(styles.docsLink, {
+              [styles[`background${color}`]]: true
+            })}
+            href="https://github.com/mediacurrent/gatsby-starter-mediacurrent/blob/main/README.md"
+          >
+            https://github.com/mediacurrent/gatsby-starter-mediacurrent/blob/main/README.md
+          </a>
+        </strong>
+        <h2>Templated Page Examples</h2>
         <p>
           Click a link below to see a templated page created from a remote data
           source.
@@ -55,19 +67,15 @@ export const IndexPageQuery = graphql`
     }
     logo: file(relativePath: { eq: "mc-logo.png" }) {
       childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
-        fluid(maxWidth: 500) {
-          ...GatsbyImageSharpFluid
+        fixed(width: 50) {
+          ...GatsbyImageSharpFixed
         }
       }
     }
     gatsby: file(relativePath: { eq: "gatsby-logo.png" }) {
       childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
-        fluid(maxWidth: 500) {
-          ...GatsbyImageSharpFluid
+        fixed(width: 50) {
+          ...GatsbyImageSharpFixed
         }
       }
     }
