@@ -27,14 +27,14 @@ const IndexPage = ({ data }) => {
         </h1>
         <h2>Docs:</h2>
         <strong>
-          <a
+          <Link
             className={classnames(styles.docsLink, {
               [styles[`background${color}`]]: true
             })}
-            href="https://github.com/mediacurrent/gatsby-starter-mediacurrent/blob/main/README.md"
+            to="/docs"
           >
-            https://github.com/mediacurrent/gatsby-starter-mediacurrent/blob/main/README.md
-          </a>
+            Click here to read the starter docs
+          </Link>
         </strong>
         <h2>Templated Page Examples</h2>
         <p>

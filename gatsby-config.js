@@ -42,7 +42,6 @@ if (env === 'TEST') {
 }
 
 module.exports = {
-  /* Your site config here */
   siteMetadata: {
     title: 'Mediacurrent Gatsby Starter',
     siteUrl: siteUrl
@@ -69,6 +68,7 @@ module.exports = {
         useHydrate: true
       }
     },
+    // Sourcing images for use with gatsby-image.
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -131,6 +131,7 @@ module.exports = {
     //     }
     //   }
     // },
+    // Allows importing SVGs as React components.
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {
@@ -162,6 +163,23 @@ module.exports = {
         createLinkInHead: true,
         addUncaughtPages: true
       }
-    }
+    },
+    ///////////////////////////////////////////////
+    //      All below here is for docs/demo      //
+    //      and can be removed when setup is     //
+    //      complete.                            //
+    ///////////////////////////////////////////////
+    // Sourcing docs markdown files. Can be removed.
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `docs`,
+        path: `${__dirname}/docs/`
+      }
+    },
+    // Transforms markdown files. Used for docs. Can be removed.
+    `gatsby-transformer-remark`,
+    `gatsby-plugin-source-template-demo`,
+    `gatsby-plugin-docs-demo`
   ]
 }
