@@ -1,12 +1,13 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
+import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
 
 import styles from './docs-template.module.scss'
 
-export default function Template({
+const DocsTemplate = ({
   data // this prop will be injected by the GraphQL query below.
-}) {
+}) => {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html, tableOfContents } = markdownRemark
   console.log(frontmatter)
@@ -31,6 +32,26 @@ export default function Template({
       />
     </div>
   )
+}
+
+export default DocsTemplate
+
+DocsTemplate.propTypes = {
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      frontmatter: PropTypes.shape({
+        title: PropTypes.string,
+        slug: PropTypes.string
+      }),
+      html: PropTypes.string,
+      tableOfContents: PropTypes.string
+    }),
+    logo: PropTypes.shape({
+      childImageSharp: PropTypes.shape({
+        fixed: PropTypes.object
+      })
+    })
+  })
 }
 
 export const pageQuery = graphql`
