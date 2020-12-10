@@ -48,3 +48,7 @@ Reusing common GraphQL queries.
 ## [Plop 💧](/docs/plop)
 
 Quickly and consistently generate new components, pages and templates from the command line.
+
+## [Schema Customization 🗺️](/docs/schema-customization)
+
+A safeguard and escape hatch for handling unpopulated data, or mapping complex relationships between data.

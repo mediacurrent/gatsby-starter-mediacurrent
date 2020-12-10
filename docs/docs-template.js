@@ -5,12 +5,9 @@ import Img from 'gatsby-image'
 
 import styles from './docs-template.module.scss'
 
-const DocsTemplate = ({
-  data // this prop will be injected by the GraphQL query below.
-}) => {
-  const { markdownRemark } = data // data.markdownRemark holds your post data
+const DocsTemplate = ({ data }) => {
+  const { markdownRemark } = data
   const { frontmatter, html, tableOfContents } = markdownRemark
-  console.log(frontmatter)
   return (
     <div className={styles.page}>
       <div className={styles.titleWrapper}>
