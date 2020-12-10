@@ -9,7 +9,7 @@ exports[`Storyshots Components/Foo Default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Global/Colors All 1`] = `
+exports[`Storyshots Global/Colors Default 1`] = `
 <div
   style={
     Object {
@@ -18,20 +18,7 @@ exports[`Storyshots Global/Colors All 1`] = `
   }
 >
   <h3>
-    Neutral Colors
-  </h3>
-  <ul
-    style={
-      Object {
-        "display": "grid",
-        "gridGap": "20px",
-        "gridTemplateColumns": "repeat(auto-fill, minmax(120px, 175px))",
-        "marginBottom": "40px",
-      }
-    }
-  />
-  <h3>
-    PBR Colors
+    Brand Colors
   </h3>
   <ul
     style={
@@ -45,6 +32,19 @@ exports[`Storyshots Global/Colors All 1`] = `
   />
   <h3>
     Accent Colors
+  </h3>
+  <ul
+    style={
+      Object {
+        "display": "grid",
+        "gridGap": "20px",
+        "gridTemplateColumns": "repeat(auto-fill, minmax(120px, 175px))",
+        "marginBottom": "40px",
+      }
+    }
+  />
+  <h3>
+    Neutral Colors
   </h3>
   <ul
     style={
@@ -59,52 +59,31 @@ exports[`Storyshots Global/Colors All 1`] = `
 </div>
 `;
 
-exports[`Storyshots Global/Colors Default 1`] = `
-<div
-  style={
-    Object {
-      "padding": "20px",
-    }
-  }
->
+exports[`Storyshots Global/Typography/Headings Headings 1`] = `
+Array [
+  <h1>
+    Heading 1
+  </h1>,
+  <h2>
+    Heading 1
+  </h2>,
   <h3>
-    Neutral Colors
-  </h3>
-  <ul
-    style={
-      Object {
-        "display": "grid",
-        "gridGap": "20px",
-        "gridTemplateColumns": "repeat(auto-fill, minmax(120px, 175px))",
-        "marginBottom": "40px",
-      }
-    }
-  />
-  <h3>
-    PBR Colors
-  </h3>
-  <ul
-    style={
-      Object {
-        "display": "grid",
-        "gridGap": "20px",
-        "gridTemplateColumns": "repeat(auto-fill, minmax(120px, 175px))",
-        "marginBottom": "40px",
-      }
-    }
-  />
-  <h3>
-    Accent Colors
-  </h3>
-  <ul
-    style={
-      Object {
-        "display": "grid",
-        "gridGap": "20px",
-        "gridTemplateColumns": "repeat(auto-fill, minmax(120px, 175px))",
-        "marginBottom": "40px",
-      }
-    }
-  />
-</div>
+    Heading 1
+  </h3>,
+  <h4>
+    Heading 1
+  </h4>,
+  <h5>
+    Heading 1
+  </h5>,
+  <h6>
+    Heading 1
+  </h6>,
+]
+`;
+
+exports[`Storyshots Global/Typography/Paragraph Paragraph 1`] = `
+<p>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat dolorum laborum minus facilis deserunt repudiandae debitis, officia commodi omnis! Animi commodi excepturi blanditiis dicta facere minus quasi fugit maxime atque?
+</p>
 `;

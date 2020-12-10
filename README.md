@@ -1,4 +1,5 @@
 # gatsby-starter-mediacurrent
+
 ![Mediacurrent Logo](https://www.drupal.org/files/styles/grid-3-2x/public/mc-blue-mediacurrent.png?itok=YDAOeM5m)
 
 ## Purpose
@@ -9,7 +10,8 @@ This should aid in the following:
 - creating a project with Mediacurrent standards already in place
 
 ## How is a Starter different from a Recipe?
-While very similar, a Recipe allows for continuous reading from upstream for updates to the Recipe.  For example, a Starter with a Storybook configuration will work, but if the is ever an effort to do a major upgrade to Storybook and it causes breaking changes and fixes, with a Recipe that can happen once in the main Recipe and pulled down to other projects.
+
+While very similar, a Recipe allows for continuous reading from upstream for updates to the Recipe. For example, a Starter with a Storybook configuration will work, but if the is ever an effort to do a major upgrade to Storybook and it causes breaking changes and fixes, with a Recipe that can happen once in the main Recipe and pulled down to other projects.
 
 We still need to determine which areas are better suited to live in the Starter versus the Recipe.
 
@@ -41,7 +43,7 @@ Before running commands, you should do `nvm use` and install the version of Node
 
 ## ENV Variables
 
-Create a `.env` file with the following values.  This is temporary and will change and have an accurate error message to avoid confusion.
+Create a `.env` file with the following values. This is temporary and will change and have an accurate error message to avoid confusion.
 
 ```
 DRUPAL='/foo'
@@ -75,4 +77,5 @@ To serve the static site locally, run:
 `npm run serve`
 
 ## Live Demo
+
 https://gatsbystartermediacurrent.gtsb.io/
