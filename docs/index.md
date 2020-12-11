@@ -49,6 +49,10 @@ Reusing common GraphQL queries.
 
 Quickly and consistently generate new components, pages and templates from the command line.
 
+## [Gatsby Cloud 🌩️](/docs/schema-customization)
+
+A safeguard and escape hatch for handling unpopulated data, or mapping complex relationships between data.
+
 ## [Schema Customization 🗺️](/docs/schema-customization)
 
 A safeguard and escape hatch for handling unpopulated data, or mapping complex relationships between data.
