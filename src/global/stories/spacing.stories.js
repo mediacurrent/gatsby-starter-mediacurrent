@@ -1,8 +1,7 @@
 import React from 'react'
 import variables from '../utils/_variables.scss'
 import colors from '../utils/_colors.scss'
-console.log(colors)
-console.log(variables)
+
 const Spacing = () => (
   <div style={{ padding: '20px' }}>
     {Object.keys(variables).map((variable) => (

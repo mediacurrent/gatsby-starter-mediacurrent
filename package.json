@@ -27,7 +27,8 @@
     "test:coverage": "jest --coverage",
     "test:update": "npm run test:coverage -- -u",
     "component": "plop component",
-    "template": "plop template"
+    "template": "plop template",
+    "page": "plop page"
   },
   "husky": {
     "hooks": {
