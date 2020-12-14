@@ -55,7 +55,7 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
     'gatsby-transformer-files',
-    'gatsby-plugin-silence-css-order',
+    '@mediacurrent/gatsby-plugin-silence-css-order-warning',
     'gatsby-plugin-loadable-storybook',
     'gatsby-plugin-sharp',
     'gatsby-plugin-sass',

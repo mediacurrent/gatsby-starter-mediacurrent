@@ -21,3 +21,18 @@ $space-md: calc(1.25 * #{$space-unit}); // 20px
 $space-lg: calc(2 * #{$space-unit}); // 32px
 $space-xl: calc(3.25 * #{$space-unit}); // 52px
 $space-xxl: calc(5.25 * #{$space-unit}); // 84px
+
+// Exporting the variables here so we can display them in Storybook.
+:export {
+  // sass-lint:disable-block no-misspelled-properties no-color-keywords
+  spacing: {
+    space-unit: $space-unit;
+    space-xxs: $space-xxs;
+    space-xs: $space-xs;
+    space-sm: $space-sm;
+    space-md: $space-md;
+    space-lg: $space-lg;
+    space-xl: $space-xl;
+    space-xxl: $space-xxl;
+  }
+}

@@ -4,30 +4,36 @@ import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
 
 import styles from './docs-template.module.scss'
+import { Helmet } from 'react-helmet'
 
 const DocsTemplate = ({ data }) => {
   const { markdownRemark } = data
   const { frontmatter, html, tableOfContents } = markdownRemark
   return (
-    <div className={styles.page}>
-      <div className={styles.titleWrapper}>
-        <Img fixed={data.logo.childImageSharp.fixed} />
-        <h1 className={styles.title}> {frontmatter.title}</h1>
-        <Link to="/docs">Docs Home</Link>
+    <>
+      <Helmet>
+        <title>{frontmatter.title}</title>
+      </Helmet>
+      <div className={styles.page}>
+        <div className={styles.titleWrapper}>
+          <Img fixed={data.logo.childImageSharp.fixed} />
+          <h1 className={styles.title}> {frontmatter.title}</h1>
+          <Link to="/docs">Docs Home</Link>
+        </div>
+
+        <div
+          className={styles.toc}
+          dangerouslySetInnerHTML={{
+            __html: frontmatter.slug !== '/docs/' ? tableOfContents : null
+          }}
+        />
+
+        <div
+          className={styles.content}
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
       </div>
-
-      <div
-        className={styles.toc}
-        dangerouslySetInnerHTML={{
-          __html: frontmatter.slug !== '/docs/' ? tableOfContents : null
-        }}
-      />
-
-      <div
-        className={styles.content}
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
-    </div>
+    </>
   )
 }
 
