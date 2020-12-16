@@ -3,6 +3,9 @@ const path = require('path')
 
 // This allows us to access all pdf, doc, and docx files in the
 // static directory.
+// Instead of linking to foo.pantheonsite.io (the underlying Drupal instance),
+// this plugin adds a `localUrl` to file nodes that can then be reference as
+// http://mypublicurl.com/myFile.pdf.
 exports.onCreateNode = async ({ node, actions }) => {
   const { createNodeField } = actions
 

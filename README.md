@@ -41,6 +41,8 @@ To use this on a new project run:
 
 Before running commands, you should do `nvm use` and install the version of Node.js mentioned if it's not already.
 
+If you have switched projects or this is a new version, you may need to `nvm install x.xx.x` or `npm rebuild node-sass`.
+
 ## ENV Variables
 
 Create a `.env` file with the following values. This is temporary and will change and have an accurate error message to avoid confusion.
