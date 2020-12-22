@@ -3,6 +3,7 @@
 exports[`Storyshots Components/Foo Default 1`] = `
 <div
   className="foo"
+  data-testid="foo"
 >
   The site url is 
   https://dev.mysite.com
@@ -57,6 +58,16 @@ exports[`Storyshots Global/Colors Default 1`] = `
     }
   />
 </div>
+`;
+
+exports[`Storyshots Global/Spacing Default 1`] = `
+<div
+  style={
+    Object {
+      "padding": "20px",
+    }
+  }
+/>
 `;
 
 exports[`Storyshots Global/Typography/Headings Headings 1`] = `

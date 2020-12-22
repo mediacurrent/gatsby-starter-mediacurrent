@@ -33,8 +33,16 @@ This file handles code transformations with Babel. It has been set up with the p
 
 ### jest.client.js
 
+Where configuration for standard Jest tests lives. See `foo/foo.test.js` for an example of these tests.
+
 ### jest.lint.js
+
+Config for linting JS using Jest as the test runner and `eslint` as the linter.
 
 ### jest.scss.js
 
+Config for linting SCSS using Jest as the test runner and `stylelint` as the linter.
+
 ### jest.storybook.js
+
+Config for snapshot testing with Storybook. Creates a snapshot for each component and will fail if the commit has changed the way a component renders without the snapshot being updated. The snapshots are updated using `npm run test:update`.

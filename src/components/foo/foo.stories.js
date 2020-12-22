@@ -1,7 +1,7 @@
 import React from 'react'
 import Foo from './foo'
 
-import data from './data'
+// import data from './data'
 
 export default {
   title: 'Components/Foo',

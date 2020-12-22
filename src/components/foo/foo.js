@@ -1,14 +1,13 @@
 // Third party imports
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
-import PropTypes from 'prop-types'
 // Component imports
 // Util import
 // Image imports
 // Style imports
 import styles from './foo.module.scss'
 
-const Foo = (props) => {
+const Foo = () => {
   const { site } = useStaticQuery(graphql`
     query {
       site {
@@ -17,7 +16,7 @@ const Foo = (props) => {
     }
   `)
   return (
-    <div className={styles.foo}>
+    <div data-testid="foo" className={styles.foo}>
       The site url is {site.siteMetadata.siteUrl}
     </div>
   )
