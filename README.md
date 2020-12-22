@@ -9,33 +9,15 @@ This should aid in the following:
 
 - creating a project with Mediacurrent standards already in place
 
-## How is a Starter different from a Recipe?
+**See demo here:** https://gatsbystartermediacurrent.gtsb.io/
 
-While very similar, a Recipe allows for continuous reading from upstream for updates to the Recipe. For example, a Starter with a Storybook configuration will work, but if the is ever an effort to do a major upgrade to Storybook and it causes breaking changes and fixes, with a Recipe that can happen once in the main Recipe and pulled down to other projects.
-
-We still need to determine which areas are better suited to live in the Starter versus the Recipe.
-
-## Areas of Impact
-
-The Recipe aids in the following areas of a project:
-
-- Basic project structure
-- Common JS utilities
-- ESLint
-- Babel
-- Prettier
-- Sass-lint
-- SVGs
-- Storybook
-- ENV Variables
-- Jest test running
-- Plop component generator
 
 ## Installation
 
-To use this on a new project run:
+To use this on a new project:
 
-`npx gatsby new my-new-project https://github.com/mediacurrent/gatsby-starter-mediacurrent`
+- Run the `gatsby new` command: `npx gatsby new my-new-project https://github.com/mediacurrent/gatsby-starter-mediacurrent`
+- Install the git hooks: `npm install husky`
 
 ## nvm
 
@@ -78,6 +60,25 @@ To serve the static site locally, run:
 
 `npm run serve`
 
-## Live Demo
+## How is a Starter different from a Recipe?
 
-https://gatsbystartermediacurrent.gtsb.io/
+While very similar, a Recipe allows for continuous reading from upstream for updates to the Recipe. For example, a Starter with a Storybook configuration will work, but if the is ever an effort to do a major upgrade to Storybook and it causes breaking changes and fixes, with a Recipe that can happen once in the main Recipe and pulled down to other projects.
+
+We still need to determine which areas are better suited to live in the Starter versus the Recipe.
+
+## Areas of Impact
+
+The Starter aids in the following areas of a project:
+
+- Basic project structure
+- Common JS utilities
+- ESLint
+- Babel
+- Prettier
+- Sass-lint
+- SVGs
+- Storybook
+- ENV Variables
+- Jest test running
+- Plop component generator
+
