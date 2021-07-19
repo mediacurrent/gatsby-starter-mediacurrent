@@ -1,3 +1,7 @@
+// const sharedConfig = require('@mediacurrent/storybook-config-gatsby')
+// This can be readded when this PR is released
+// https://github.com/mediacurrent/storybook-config-gatsby/pull/1
+
 const sharedConfig = (config) => {
   // Transpile Gatsby module because Gatsby includes un-transpiled ES6 code.
   config.module.rules[0].exclude = [/node_modules\/(?!(gatsby)\/)/]
