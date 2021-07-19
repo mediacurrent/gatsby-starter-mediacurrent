@@ -60,7 +60,6 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-plugin-sass',
     'gatsby-plugin-image',
-
     // Allows lazy loading components.
     `gatsby-plugin-loadable-components-ssr`,
 
