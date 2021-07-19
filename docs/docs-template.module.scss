@@ -27,6 +27,11 @@
     text-decoration: none;
     font-weight: bold;
   }
+
+  :global(.gatsby-image-wrapper) {
+    max-width: 50px;
+    max-height: 50px;
+  }
 }
 
 .toc {
