@@ -12,7 +12,7 @@ import { gatsbyImageType } from '../global/propTypeHelpers'
 const IndexPage = ({ data }) => {
   const colors = ['Blue', 'Orange', 'Lavender']
   const color = colors[Math.floor(Math.random() * colors.length)]
-  console.log(data)
+
   return (
     <div className={styles.indexPage}>
       <div className={styles.container}>
