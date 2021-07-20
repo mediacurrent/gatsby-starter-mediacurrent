@@ -10,7 +10,7 @@ import { gatsbyImageType } from '../src/global/propTypeHelpers'
 const DocsTemplate = ({ data }) => {
   const { markdownRemark } = data
   const { frontmatter, html, tableOfContents } = markdownRemark
-  console.log(markdownRemark)
+
   return (
     <>
       <Helmet>
