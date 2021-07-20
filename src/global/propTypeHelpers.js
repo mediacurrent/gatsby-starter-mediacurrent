@@ -2,22 +2,26 @@ import PropTypes from 'prop-types'
 /* eslint-disable camelcase */
 
 // Quickly set common propTypes for gatsby-images.
-export const fixedGatsbyImageType = PropTypes.shape({
-  localFile: PropTypes.shape({
-    childImageSharp: PropTypes.shape({
-      fixed: PropTypes.shape({
-        src: PropTypes.string.isRequired
-      }).isRequired
-    }).isRequired
-  }).isRequired
-})
 
-export const fluidGatsbyImageType = PropTypes.shape({
-  localFile: PropTypes.shape({
-    childImageSharp: PropTypes.shape({
-      fluid: PropTypes.shape({
-        src: PropTypes.string.isRequired
-      }).isRequired
+export const gatsbyImageType = PropTypes.shape({
+  gatsbyImageData: PropTypes.shape({
+    backgroundColor: PropTypes.string.isRequired,
+    height: PropTypes.number.isRequired,
+    width: PropTypes.number.isRequired,
+    layout: PropTypes.string.isRequired,
+    images: PropTypes.shape({
+      fallback: PropTypes.shape({
+        src: PropTypes.string.isRequired,
+        srcSet: PropTypes.string.isRequired,
+        sizes: PropTypes.string.isRequired
+      }),
+      sources: PropTypes.arrayOf(
+        PropTypes.shape({
+          sizes: PropTypes.string.isRequired,
+          srcSet: PropTypes.string.isRequired,
+          type: PropTypes.string.isRequired
+        })
+      )
     }).isRequired
   }).isRequired
 })

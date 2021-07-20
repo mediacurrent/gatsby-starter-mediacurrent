@@ -3,21 +3,29 @@ import React from 'react'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
-import Img from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 import '../global/_global.scss'
-import styles from './index.module.scss'
+import * as styles from './index.module.scss'
+import { gatsbyImageType } from '../global/propTypeHelpers'
 
 const IndexPage = ({ data }) => {
   const colors = ['Blue', 'Orange', 'Lavender']
   const color = colors[Math.floor(Math.random() * colors.length)]
+
   return (
     <div className={styles.indexPage}>
       <div className={styles.container}>
         <div className={styles.imageContainer}>
-          <Img fixed={data.logo.childImageSharp.fixed} />
+          <GatsbyImage
+            image={data.logo.childImageSharp.gatsbyImageData}
+            alt="mediacurrent"
+          />
           <span>+</span>
-          <Img fixed={data.gatsby.childImageSharp.fixed} />
+          <GatsbyImage
+            image={data.gatsby.childImageSharp.gatsbyImageData}
+            alt="gatsby"
+          />
         </div>
         <h1
           className={classnames(styles.heading, {
@@ -59,14 +67,10 @@ export default IndexPage
 IndexPage.propTypes = {
   data: PropTypes.shape({
     logo: PropTypes.shape({
-      childImageSharp: PropTypes.shape({
-        fixed: PropTypes.object
-      })
+      childImageSharp: gatsbyImageType
     }),
     gatsby: PropTypes.shape({
-      childImageSharp: PropTypes.shape({
-        fixed: PropTypes.object
-      })
+      childImageSharp: gatsbyImageType
     }),
     allDog: PropTypes.shape({
       nodes: PropTypes.arrayOf(
@@ -79,7 +83,7 @@ IndexPage.propTypes = {
 }
 
 export const IndexPageQuery = graphql`
-  query {
+  {
     site {
       ...SiteFragment
     }
@@ -90,16 +94,12 @@ export const IndexPageQuery = graphql`
     }
     logo: file(relativePath: { eq: "mc-logo.png" }) {
       childImageSharp {
-        fixed(width: 50) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(width: 125, layout: FIXED)
       }
     }
     gatsby: file(relativePath: { eq: "gatsby-logo.png" }) {
       childImageSharp {
-        fixed(width: 50) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(width: 125, layout: FIXED)
       }
     }
   }

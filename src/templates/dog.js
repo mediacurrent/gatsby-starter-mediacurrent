@@ -3,7 +3,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 
-import styles from './dog.module.scss'
+import * as styles from './dog.module.scss'
 // The result of the query on this page gets passed in to the default export as
 // a prop called `data`.
 const DogPage = ({ data }) => {

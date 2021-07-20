@@ -1,14 +1,16 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 import PropTypes from 'prop-types'
-import Img from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
-import styles from './docs-template.module.scss'
+import * as styles from './docs-template.module.scss'
 import { Helmet } from 'react-helmet'
+import { gatsbyImageType } from '../src/global/propTypeHelpers'
 
 const DocsTemplate = ({ data }) => {
   const { markdownRemark } = data
   const { frontmatter, html, tableOfContents } = markdownRemark
+
   return (
     <>
       <Helmet>
@@ -16,8 +18,11 @@ const DocsTemplate = ({ data }) => {
       </Helmet>
       <div className={styles.page}>
         <div className={styles.titleWrapper}>
-          <Img fixed={data.logo.childImageSharp.fixed} />
-          <h1 className={styles.title}> {frontmatter.title}</h1>
+          <GatsbyImage
+            image={data.logo.childImageSharp.gatsbyImageData}
+            alt="mediacurrent"
+          />
+          <h1>{frontmatter.title}</h1>
           <Link to="/docs">Docs Home</Link>
         </div>
 
@@ -50,9 +55,7 @@ DocsTemplate.propTypes = {
       tableOfContents: PropTypes.string
     }),
     logo: PropTypes.shape({
-      childImageSharp: PropTypes.shape({
-        fixed: PropTypes.object
-      })
+      childImageSharp: gatsbyImageType
     })
   })
 }
@@ -61,18 +64,19 @@ export const pageQuery = graphql`
   query($slug: String!) {
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       html
-      tableOfContents(pathToSlugField: "frontmatter.slug")
+      tableOfContents(
+        pathToSlugField: "frontmatter.slug"
+        heading: null
+        maxDepth: 6
+      )
       frontmatter {
         slug
         title
       }
     }
-
     logo: file(relativePath: { eq: "mc-logo.png" }) {
       childImageSharp {
-        fixed(width: 50) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(width: 125, layout: FIXED)
       }
     }
   }

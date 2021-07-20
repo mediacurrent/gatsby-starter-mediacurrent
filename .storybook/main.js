@@ -4,5 +4,9 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/addon-a11y',
     '@storybook/addon-knobs'
-  ]
+  ],
+  features: {
+    postcss: false
+  },
+  core: { builder: 'webpack5' }
 }

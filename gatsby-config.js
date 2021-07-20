@@ -59,15 +59,10 @@ module.exports = {
     'gatsby-plugin-loadable-storybook',
     'gatsby-plugin-sharp',
     'gatsby-plugin-sass',
-    {
-      // Allows lazy loading components.
-      resolve: `gatsby-plugin-loadable-components-ssr`,
-      options: {
-        // Whether replaceHydrateFunction should call ReactDOM.hydrate or ReactDOM.render
-        // Defaults to ReactDOM.render on develop and ReactDOM.hydrate on build
-        useHydrate: true
-      }
-    },
+    'gatsby-plugin-image',
+    // Allows lazy loading components.
+    `gatsby-plugin-loadable-components-ssr`,
+
     // Sourcing images for use with gatsby-image.
     {
       resolve: `gatsby-source-filesystem`,
@@ -182,11 +177,6 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        tableOfContents: {
-          pathToSlugField: 'frontmatter.slug',
-          heading: null,
-          maxDepth: 6
-        },
         plugins: [`gatsby-remark-prismjs`]
       }
     },
